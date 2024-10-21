@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      @font-face {
+        font-family: 'RedHatDisplay';
+        src: url(./font/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf) format(truetype);
+        font-display: swap;
+      }
+      :root {
+        --Pale-blue: hsl(225, 100%, 94%);
+        --Bright-blue: hsl(245, 75%, 52%);
+
+        --Very-pale-blue: hsl(225, 100%, 98%);
+        --Desaturated-blue: hsl(224, 23%, 55%);
+        --Dark-blue: hsl(223, 47%, 23%);
+      }
+      body {
+        inline-size: 1.5;
+        -webkit-font-smoothing: antialiaesd;
+        font-family: 'RedHatDisplay';
+        font-size: 16px;
+        font-weight: 500;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('./images/pattern-background-desktop.svg');
+        background-repeat: no-repeat;
+        background-color: hsl(225, 100%, 94%);
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 450px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        .pic img {
+          border-radius: 20px 20px 0 0;
+        }
+
+        .info {
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .title {
+            font-size: 28px;
+            font-weight: 900;
+            margin: 10px 0;
+          }
+
+          .content {
+            color: hsl(224, 23%, 55%);
+            margin: 5px 15px 25px;
+            line-height: 25px;
+          }
+
+          .music {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+
+            .music-info {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .icon img {
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+              }
+
+              .music-name {
+                .name {
+                  font-weight: 900;
+                  margin-bottom: 5px;
+                }
+
+                .price {
+                  color: hsl(224, 23%, 55%);
+                }
+              }
+            }
+            
+            .href a {
+              color: hsl(245, 75%, 52%);
+              font-weight: 700;
+              transition: color 0.3s ease;
+            }
+            .href a:hover {
+              color: hsl(245, 100%, 75%);
+              text-decoration: none;
+            }
+          }
+
+          .buy {
+            width: 350px;
+            margin: 35px 0;
+            height: 50px;
+            color: white;
+            background-color: hsl(245, 75%, 52%);
+            border: 0;
+            font-weight: 900;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          .buy:hover {
+            background-color: hsl(245, 100%, 75%);
+          }
+
+          .cancel {
+            border: 0;
+            color: hsl(224, 23%, 55%);
+            background-color: white;
+            font-weight: 900;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          .cancel:hover {
+            color: black;
+          }
+        }
+      }
+
+      .attribution {
+        position: absolute;
+        font-size: 11px;
+        text-align: center;
+        bottom: 0;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <picture class="pic">
+        <source
+          media="(max-width:650px)"
+          srcset="./images/illustration-hero.svg"
+        />
+        <img src="./images/illustration-hero.svg" alt="picture" />
+      </picture>
+
+      <section class="info">
+        <p class="title">Order Summary</p>
+
+        <p class="content">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+
+        <section class="music">
+          <section class="music-info">
+            <figure class="icon">
+              <img src="./images/icon-music.svg" alt="icon" />
+            </figure>
+
+            <section class="music-name">
+              <p class="name">Annual Plan</p>
+              <p class="price">$59.99/year</p>
+            </section>
+          </section>
+
+          <section class="href">
+            <a href="#">Change</a>
+          </section>
+        </section>
+
+        <button class="buy">Proceed to Payment</button>
+
+        <button class="cancel">Cancel Order</button>
+      </section>
+    </article>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
